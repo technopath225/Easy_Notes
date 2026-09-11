@@ -1,0 +1,73 @@
+
+
+.slide{
+
+    
+    min-width: var(--slideWidth);
+    min-height:var(--slideHeight);
+    display: flex;
+    flex-direction: column;
+    text-indent: 0%;
+    padding: var(--slidePadding);
+    border-radius: var( --slideBorderRadius);
+    margin: var(--slideMargin);
+    box-shadow: var(--slideShadow);
+    overflow: hidden;
+    border: var(--slideBorder);
+    background-color: var(--clrOrange);
+    border-right: none;
+    border-bottom: none;
+
+    transform: scale(1);
+    transition-property: scale ;
+    transition-duration: 200ms;
+    
+    max-width: 18rem;
+    max-height: 22rem;
+
+}
+
+.slide:hover{
+
+    scale: 1.05;
+}
+
+.title{
+    color: var(--titleClr);
+    text-shadow: var(--titleShadow);
+    font-family: var(--fontMain);
+    font-size: var(--titleSize);
+    margin-left: var(--titleMargin);
+    
+}
+
+.text{
+
+    margin-left: 1rem;
+    font-family: var(--fontMain);
+    color: var(--titleClr);
+    font-size: var(--textSize);
+    
+}
+
+.deco{
+    width: var(--decoWidth);
+    height: var(--decoHeight);
+    background-color: var(--decoColor);
+    border-radius: var(--decoRadius);
+    position: absolute;
+    margin-left: var(--decoMarginLeft);
+    margin-top: var(--decoTopMargin);
+    border: var(--decoBorder);
+    border-left: none;
+}
+
+.textDiv{
+margin-left: -1.3rem;
+background:linear-gradient(180deg,var(--clrOrange),var(--clrDark));
+border-radius: 0.1rem;
+padding:1rem;
+padding-right: 3rem;
+width: 13rem;
+
+}

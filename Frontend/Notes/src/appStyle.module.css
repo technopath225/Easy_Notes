@@ -1,0 +1,14 @@
+.body{
+  margin-top: 0;
+
+  /*background-image:  url("./background.png") ;*/
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0),rgba(69, 255, 69, 0.315)) , url("./background.png");
+
+  background-repeat: no-repeat;
+  background-position: center;
+  height:70rem;
+  overflow-x: hidden;
+  
+ 
+}
+

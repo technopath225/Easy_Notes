@@ -1,0 +1,51 @@
+
+.searchDiv{
+
+   
+   
+   
+    display: flex;
+    justify-content:center;
+    flex-direction: row;
+    margin-top: 1rem;
+}
+
+.input{
+
+   
+background-color: aquamarine;
+height: 3rem;
+min-width:20rem;
+
+max-width: 35rem;
+background-color: azure;
+border-radius: 10px;
+text-align: center;
+border: solid 2px var(--clrOrange);
+padding-right: 1rem;
+font-size: large;
+}
+
+.button{
+border: solid 2px var(--clrOrange);
+height: 3.15rem;
+width:5rem;
+border-radius: 10px;
+margin-left: -2rem;
+background-color: var(--clrOrange);
+color: white;
+font-family: var( --fontMain);
+font-size: 1rem;
+font-weight: bolder;
+}
+
+.button:hover{
+
+    background-color: var(--clrWhiteOrange);
+    color: var(--clrOrange);
+    transform: scale(1);
+    transition-property: scale ;
+    transition-duration: 200ms;
+    scale: 1.05;
+    
+}

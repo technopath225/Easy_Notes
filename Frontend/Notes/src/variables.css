@@ -1,0 +1,39 @@
+:root{
+
+    --clrLime : rgb(165, 255, 127);
+    --clrOrange : rgb(255, 106, 0);
+    --clrWhiteOrange : rgb(254, 255, 251);
+    --clrPurple:rgba(225, 0, 255, 0.664);
+
+    
+    --headerShadow:.1rem .1rem 0.1rem  rgba(0, 0, 0, 0.411);
+
+
+    --backgroundColor:rgb(92, 92, 92);
+
+    --fontMain: cursive;
+    --titleSize:1.5rem;
+    --titleClr : antiquewhite;
+    --titleShadowClr:rgba(255, 255, 255, 0.507);
+    --titleShadow:2px 2px 5px var(--titleShadowClr);
+    --titleMargin:0.3rem;
+    
+    --textSize : 1.2rem;
+
+    --slidePadding : 0.9rem;
+    --slideMargin : 1rem;
+    --slideBorderRadius: 1rem;
+    --slideWidth: 13rem;
+    --slideHeight:15rem;
+    --slideShadowColor: rgba(24, 7, 7, 0.226);
+    --slideShadow: .2rem .2rem 0.3rem var(--slideShadowColor);
+    --slideBorder:solid 2px rgb(206, 206, 206);
+
+    --decoColor:rgb(255, 166, 0);
+    --decoWidth:1.5rem;
+    --decoHeight:3rem;
+    --decoRadius:5px;
+    --decoTopMargin:1rem;
+    --decoMarginLeft:-1.5rem;
+    --decoBorder:solid 1px rgba(224, 224, 224, 0.801);
+}

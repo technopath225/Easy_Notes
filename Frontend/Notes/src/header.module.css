@@ -1,0 +1,29 @@
+.Header{
+
+background-color: var(--clrOrange);
+box-shadow: var(--headerShadow);
+
+}
+
+.HeaderList{
+display: flex;
+gap: 4rem;
+justify-content: center;
+color:aliceblue;
+font-family: cursive;
+font-size: 1.1rem;
+list-style-type: none;
+padding: 1rem;
+
+}
+
+.Logo{
+    display: flex;
+    justify-content: center;
+    font-family: cursive;
+    color: aliceblue;
+    font-size: 2rem;
+    
+
+
+}
