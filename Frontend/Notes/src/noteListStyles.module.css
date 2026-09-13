@@ -1,9 +1,9 @@
 .listDiv{
 
-    margin-top: 1rem;
-    padding-top: 1rem;
-    background-color: rgba(255, 255, 255, 0.349);
-    height: 75vh;
+    margin-top: var(--listDivMarginTop);
+    padding-top: var(--listDivPaddingTop);
+    background-color: var(--listDivBackgound);
+    height: var(--listDivHeight);
 
 
     
@@ -13,8 +13,8 @@
 .list{
     display: grid;
     justify-content: left;
-    
-    gap: -1rem;
+    list-style-type: none;
+    gap: var(--listGap);
     grid-template-columns: repeat(auto-fit, minmax(16rem, .25fr));
   
 }

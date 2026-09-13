@@ -7,13 +7,14 @@ box-shadow: var(--headerShadow);
 
 .HeaderList{
 display: flex;
-gap: 4rem;
+gap:var(--headerListGap);
 justify-content: center;
 color:aliceblue;
 font-family: cursive;
-font-size: 1.1rem;
+font-size: var( --headerItemsFontSize);
+
 list-style-type: none;
-padding: 1rem;
+padding: var( --headerPadding);
 
 }
 
@@ -26,4 +27,21 @@ padding: 1rem;
     
 
 
+}
+
+.HeaderList li{
+width: var(--headerItemsWidth);
+height: var(--headerItemsHeight);
+display: flex;
+justify-content: center;
+
+align-items: center;
+}
+.HeaderList li:hover{
+    background-color: var(--clrWhiteOrange);
+    color: var(--clrOrange);
+    transform: scale(1);
+    transition-property: scale ;
+    transition-duration: 200ms;
+    scale: 1.05;
 }

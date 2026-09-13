@@ -4,27 +4,27 @@
   position: fixed; 
   inset: 0;
 
-    width: 100vw;
-    height: 100vh;
+    width:var(--popDivWidth);
+    height: var(--popDivHeight);
 
-    backdrop-filter: blur(2px);
+    backdrop-filter: var(--BackDropdropBlur);
 
     display: grid;
     justify-content: center;
     gap: 0;
-    background-color: rgba(255, 0, 234, 0);
+    
 }
 
 .textArea{
 margin-top: 0rem;
 
-width: 80cqw;
-height: 65cqh;
-background-color: rgba(34, 34, 34, 0.952);
+width: var(--textAreaWidth);
+height: var(--textAreaHeight);
+background-color: var(--textAreaBackGroundColor);
 border: none;
-color: whitesmoke;
-border-radius: 5px;
-padding: 1rem;
+color: var(--textColor);
+border-radius: var(--textAreaRadius);
+padding: var(--textAreaPadding);
 resize: none;
 }
 
@@ -32,22 +32,21 @@ resize: none;
     list-style-type: none;
     display: flex;
     justify-content: end;
-    gap: .1rem;
-    
+    gap: var(-EditorTopGap);
    
 }
 
 .topButtonsList input{
-    background-color: rgb(66, 66, 66);
-    min-width: 13rem;
-    width: 35cqw;
-    margin-right: .7rem;
-    margin-top: .3rem;
-    border-radius: 5px;
-    height: 2.5rem;
-    color: aliceblue;
-    font-size: 1.2rem;
-    padding-left: 1rem;
+    background-color: var(--editTopButtonBackground);
+    min-width: var(--buttonMinWidth);
+    width: var(--buttonWidth);
+    margin-right: var(--buttonMarginRight);
+    margin-top: var(--buttonTop);
+    border-radius: var(--borderRad);
+    height: var(--buttonHeight);
+    color: var(--buttonTextColor);
+    font-size: var(--buttonFontSize);
+    padding-left: var(--buttonPadding);
 }
 
 
@@ -56,7 +55,7 @@ resize: none;
     list-style-type: none;
     display: flex;
     justify-content: end;
-    gap: 1rem;
+    gap: var(--bottomButtonsGap);
     
    
 }
@@ -99,6 +98,11 @@ resize: none;
     transition-property: scale ;
     transition-duration: 200ms;
     scale: 1.05;
+    
+}
+
+.deleteBtn{
+    margin-left: -17rem;
     
 }
 

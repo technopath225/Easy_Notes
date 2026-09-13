@@ -1,6 +1,9 @@
+import { useState } from "react";
 import noteStyles from "./note.module.css"
+import React from "react";
 
-function NOTE(props){
+const NOTE = React.memo(function NOTE(props){
+
 
 
     return(
@@ -15,7 +18,7 @@ function NOTE(props){
             </div>
     )
 
-}
+});
 
 
 export default NOTE;

@@ -8,30 +8,10 @@ const BASEURL = "http://localhost:5005";
 
 
 
-function NoteList({isNoteClicked}){
+function NoteList({notesArray,isNoteClicked}){
 
-    const [notesList,setNotesList] = useState([]);
     
-    useEffect( () =>{
-
-
-        const fetchNotes = async () => {
-            try {
-                const responce = await fetch(`${BASEURL}/all`);
-           const data = await responce.json();
-            setNotesList(data);
-    
-            } catch (error) {
-                console.error( "Error fetching data :: ",error.message);
-            }
-           
-        }
-    
-        fetchNotes();
-      
-    } , []);
-
-
+console.log(notesArray);
     
 
 
@@ -40,27 +20,23 @@ function NoteList({isNoteClicked}){
 
         
         <div className={listStyles.listDiv}>
-            <ul className={listStyles.list}>
-        {
-            notesList.map( (note)=>{
 
-                return ( <li  onClick = { () =>isNoteClicked(note)} key = {note.note_id} ><Note title = {note.title} text = {note.notetext}/></li>
-           )
-            }
+           
+            {notesArray == null ?(
+                <h4>Create new notes</h4>
 
+            ):(
 
-            )
-        }
-            
-           {/*
-
-            <li key = "6">        <Note title = "THE WORK" text = "When i get homw from work i must fiuhakshf asfajhkjasf kjhasfah jkhkh kjhfkjahfkjashfsa kjhkjhkjhsafa kjhkjhkasf kjhkhkjsaf kjhkjashfkjahf asfkjakshfakjsfha askjfhakjfhakfha asfkjhaskjashfa kjhkhkjsdhkjshfshdjfh kjhfkjshdfkjsdhf "/></li>
-            */} </ul>
+                <ul className={listStyles.list}>
 
 
+                {notesArray.map( (note)=>{
 
-       
-      
+                    return( <li  onClick = { () =>isNoteClicked(note)} key = {note.note_id} ><Note title = {note.title} text = {note.notetext}/></li>)})}
+                </ul>
+
+            )}
+
         </div>
         
         

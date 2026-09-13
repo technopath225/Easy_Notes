@@ -7,10 +7,14 @@ router.post("", async (req,res) => {
 
     try {
         const note = req.body;
-
-        const retData = await pool.query("INSERT INTO notes (title,notetext) VALUES ($1,$2) Returning *", [note.title,note.text]);
+        console.log(note.title);
+        const retData = await pool.query("INSERT INTO notes (title,notetext,created_at,updated_at) VALUES ($1,$2,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP)  Returning *", [note.title,note.notetext]);
             
-        res.json(retData);
+        if(retData.rowCount == 0){
+            return res.status(404).json({ error: "Something WENT WRONG" })
+        }
+
+        res.status(200).json({ message: "Created SUCCESSFULY" })
         
 
         

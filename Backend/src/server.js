@@ -6,7 +6,7 @@ import getAllRoute from "./routeGetAll.js";
 import createRoute from "./routerCreate.js";
 import deleteRoute from "./routerDelete.js";
 import routerEditNote from "./routerEditNote.js";
-
+import searchRoute from "./routerSearch.js";
 
 const app = express();
 app.use(express.json());
@@ -30,6 +30,8 @@ app.use("/create", createRoute);
 app.use("/edit", routerEditNote);
 
 app.use("/delete", deleteRoute);
+
+app.use("/search", searchRoute);
 
 const sertver = app.listen(PORT, () => {
 

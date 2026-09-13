@@ -7,6 +7,12 @@
 
     
     --headerShadow:.1rem .1rem 0.1rem  rgba(0, 0, 0, 0.411);
+    --headerListGap:3rem;
+    --headerItemsFontSize:1.2rem;
+    --headerPadding:1rem;
+
+    --headerItemsWidth:6rem;
+    --headerItemsHeight:2.5rem;
 
 
     --backgroundColor:rgb(92, 92, 92);
@@ -28,6 +34,8 @@
     --slideShadowColor: rgba(24, 7, 7, 0.226);
     --slideShadow: .2rem .2rem 0.3rem var(--slideShadowColor);
     --slideBorder:solid 2px rgb(206, 206, 206);
+    --slideMaxWidth:18rem;
+    --slideMaxHeight:22rem;
 
     --decoColor:rgb(255, 166, 0);
     --decoWidth:1.5rem;
@@ -36,4 +44,42 @@
     --decoTopMargin:1rem;
     --decoMarginLeft:-1.5rem;
     --decoBorder:solid 1px rgba(224, 224, 224, 0.801);
+
+    --noteTextDivMargin:-1.3rem;
+    --noteTextDivBorderRad:0.1rem;
+    --noteTextDivPadding:1rem;
+    --noteTextDivPaddingRight:1rem;
+    --noteTextDivWidth:13rem;
+    
+    --listDivMarginTop:1rem;
+    --listDivPaddingTop:1rem;
+    --listDivBackgound:rgba(255, 255, 255, 0.349);
+    --listDivHeight:75vh;
+    --listGap:-1rem;
+    
+    --popDivWidth: 100vw;
+    --popDivHeight:100vh;
+    --BackDropdropBlur:blur(2px);
+
+    --textAreaWidth:80cqw;
+    --textAreaHeight:65cqh;
+    --textAreaBackGroundColor:rgba(34, 34, 34, 0.952);
+    --textColor:whitesmoke;
+    --textAreaRadius:5px;
+    --textAreaPadding:1rem;
+    
+    --EditorTopGap:1rem;
+    --editTopButtonBackground:rgb(66, 66, 66);
+    --buttonMinWidth:13rem;
+    --buttonWidth:35cqw;
+    --buttonMarginRight:.7rem;
+    --buttonTop:.3rem;
+    --borderRad:5px;
+    --buttonHeight:2.5rem;
+    --buttonTextColor:aliceblue;
+    --buttonFontSize:1.2rem;
+    --buttonPadding:1rem;
+
+    --bottomButtonsGap:1rem
+
 }

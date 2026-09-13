@@ -11,7 +11,7 @@ try {
     
     const note = req.body;
 
-    const deleteNote = await pool.query("DELETE FROM notes WHERE note_id = ($1) Returning *",[note.id]);
+    const deleteNote = await pool.query("DELETE FROM notes WHERE note_id = ($1) Returning *",[note.note_id]);
     res.json(deleteNote );
 
     

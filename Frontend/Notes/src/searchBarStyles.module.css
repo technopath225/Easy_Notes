@@ -1,17 +1,14 @@
 
 .searchDiv{
 
-   
-   
-   
     display: flex;
     justify-content:center;
     flex-direction: row;
     margin-top: 1rem;
+
 }
 
 .input{
-
    
 background-color: aquamarine;
 height: 3rem;
@@ -26,7 +23,7 @@ padding-right: 1rem;
 font-size: large;
 }
 
-.button{
+.searchButton{
 border: solid 2px var(--clrOrange);
 height: 3.15rem;
 width:5rem;
@@ -39,7 +36,22 @@ font-size: 1rem;
 font-weight: bolder;
 }
 
-.button:hover{
+.newButton{
+    border: solid 2px var(--clrOrange);
+    height: 3.15rem;
+    width:7rem;
+    border-radius: 10px;
+    margin-left: 1rem;
+    background-color: whitesmoke;
+    color:  var(--clrOrange);
+    font-family: var( --fontMain);
+    font-size: 1rem;
+    font-weight: 900;
+    
+    }
+
+
+.searchButton:hover{
 
     background-color: var(--clrWhiteOrange);
     color: var(--clrOrange);

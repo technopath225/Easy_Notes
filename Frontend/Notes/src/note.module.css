@@ -22,8 +22,8 @@
     transition-property: scale ;
     transition-duration: 200ms;
     
-    max-width: 18rem;
-    max-height: 22rem;
+    max-width: var(--slideMaxWidth);
+    max-height: var(--slideMaxHeight);
 
 }
 
@@ -63,11 +63,11 @@
 }
 
 .textDiv{
-margin-left: -1.3rem;
+margin-left: var(--noteTextDivMargin);
 background:linear-gradient(180deg,var(--clrOrange),var(--clrDark));
-border-radius: 0.1rem;
-padding:1rem;
-padding-right: 3rem;
-width: 13rem;
+border-radius: var(--noteTextDivBorderRad);
+padding:var(--noteTextDivPadding);
+padding-right: var(--noteTextDivPaddingRight);
+width: var(--noteTextDivWidth);
 
 }

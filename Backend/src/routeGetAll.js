@@ -8,7 +8,8 @@ router.get("", async (req,res) => {
 
 try {
     
-    const allNotes = await pool.query("Select * from notes");
+    
+    const allNotes = await pool.query("Select * from notes order by updated_at desc");
     res.json(allNotes.rows);
 
     

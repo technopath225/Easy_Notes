@@ -14,9 +14,9 @@ function Header(){
         </h4>
 
         <ul className = {headerStyles.HeaderList}>
-        <li>Home</li>
-        <li>Groups</li>
-        <li>Locked Notes</li>
+        <li>HOME</li>
+        <li>GROUPS</li>
+        <li>LOCKED</li>
 
 
         </ul>

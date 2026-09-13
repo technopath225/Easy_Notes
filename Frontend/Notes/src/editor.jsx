@@ -1,10 +1,23 @@
 import editorStyles from "./editorStyles.module.css"
+import { useState } from "react";
 
 
+function Editor({save ,discard,deleteNote, note}){
 
-function Editor({save ,discard , note}){
+   /* console.log(`text from EDITO-- ID : ${note.note_id} -- TITLE : ${note.title} -- TEXT : ${note.notetext} `);
+    console.log(note);*/
 
+    const [localText,setLocalText] = useState(note.notetext);
+    const [localTitle,setLocalTitle] = useState(note.title);
+    
+    const saveNote = () => {
+        const editedNote = {
+            note_id:note.note_id,
+            title : localTitle,
+            notetext : localText }
 
+        save(editedNote);
+    }
     return(
 
         
@@ -13,12 +26,13 @@ function Editor({save ,discard , note}){
             <div className={editorStyles.popWindow}>
            
             <ul className={editorStyles.topButtonsList}>
-            <input type = "text" value = {note.title} onChange={(e) => setName(e.target.value)}></input>
+            <input type = "text" value = {localTitle} onChange={(e) => setLocalTitle(e.target.value)} required minLength={4}></input>
             <li><button>SIZE</button></li>
             <li><button>BOLD</button></li>
             <li><button>ALIGN</button></li>
             </ul>
-            <textarea className={editorStyles.textArea} value = {note.text} onChange={(e) => setName(e.target.value)} >
+            <textarea className={editorStyles.textArea} value = {localText}  onChange={(e) => {setLocalText(e.target.value); 
+            ; console.log(e.target.value)}  }  required minLength={4}>
 
         
 </textarea>
@@ -26,8 +40,10 @@ function Editor({save ,discard , note}){
             <div>
 
             <ul className={editorStyles.bottomButtonsList}>
+            <li><button className={editorStyles.deleteBtn} onClick={()=>deleteNote(note.note_id)}>Delete</button></li>
             <li><button onClick={discard}>Discard</button></li>
-            <li><button onClick={save}>Save</button></li>
+            <li><button onClick={saveNote}>Save</button></li>
+            
             
             </ul>
 

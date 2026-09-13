@@ -10,9 +10,14 @@ router.post("", async (req,res) => {
         
 
 
-        const retData = await pool.query("UPDATE notes SET title = ($1) , notetext = ($2)   WHERE note_id = ($3) Returning *", [body.title,body.text,body.id]);
+        const retData = await pool.query("UPDATE notes SET title = ($1) , notetext = ($2), updated_at = CURRENT_TIMESTAMP  WHERE note_id = ($3)", [body.title,body.notetext,body.note_id]);
         
-        res.json(retData);
+        
+        if(retData.rowCount == 0){
+            return res.status(404).json({ error: "Failed: INVALID NOTE ID" })
+        }
+
+        res.status(200).json({ message: "SAVED SUCCESSFULY" })
         
 
         
