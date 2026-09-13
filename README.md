@@ -46,6 +46,8 @@ Node.js installed on your machine
 
 PostgreSQL installed and running locally
 
+
+
 1. Backend Setup
 Navigate to your backend directory, install the dependencies, and fire up the server.
 
@@ -77,6 +79,9 @@ const PORT = 5005;
 2. Frontend Setup
 Navigate to your Vite/React frontend directory:
 
+i used POSTMEN to test end points use anything 
+Testing Endpoints with Postman
+All backend CRUD routes (creating, updating, and deleting notes) were rigorously tested and verified using Postman. You can easily fire up Postman and send requests to http://localhost:5005 to test your API endpoints directly.
 Bash
 
 
