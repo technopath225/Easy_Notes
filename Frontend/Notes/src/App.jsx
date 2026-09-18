@@ -3,7 +3,7 @@ import NoteList from "./noteList.jsx";
 import appStyle from "./appStyle.module.css"
 import SearchBar from "./searchBar.jsx";
 import Editor from "./editor.jsx";
-import SignInWindow from "./signin.jsx";
+import AuthWindow from "./authWin.jsx";
 import "./variables.css"
 import { useState, useEffect } from "react";
 
@@ -247,7 +247,7 @@ function App() {
     <>
     <Header/>
 
-   <SignInWindow></SignInWindow>
+   {!isSignedin && <AuthWindow/>}
    <SearchBar SearchFunction = {searchNotes} createNew = {createButton}/>
 
     {isSignedin && <NoteList  notesArray = {notesList }isNoteClicked = {onNoteSelect} />}

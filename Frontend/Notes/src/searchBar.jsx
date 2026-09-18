@@ -19,7 +19,7 @@ function SearchBar({SearchFunction,createNew}){
         </div>
        
         
-      
+       
 
     )
 }
