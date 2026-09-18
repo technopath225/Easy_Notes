@@ -45,3 +45,21 @@ align-items: center;
     transition-duration: 200ms;
     scale: 1.05;
 }
+
+.profile{
+
+   
+    width: 7rem;
+    height: 15rem;
+    background-color: rgb(255, 255, 255);
+    border-radius: 50rem;
+    background-image:  url("./picon.png");
+    color: aliceblue;
+    background-size: 4rem 3rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: solid 3px rgba(0, 0, 0, 0.568);
+}
+
+
+

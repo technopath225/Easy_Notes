@@ -18,6 +18,8 @@ function Editor({save ,discard,deleteNote, note}){
 
         save(editedNote);
     }
+
+    console.log("editor reacted");
     return(
 
         

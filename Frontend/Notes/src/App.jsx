@@ -3,6 +3,7 @@ import NoteList from "./noteList.jsx";
 import appStyle from "./appStyle.module.css"
 import SearchBar from "./searchBar.jsx";
 import Editor from "./editor.jsx";
+import SignInWindow from "./signin.jsx";
 import "./variables.css"
 import { useState, useEffect } from "react";
 
@@ -29,6 +30,8 @@ function App() {
   
   }
 
+
+
   
 
   const [isEditing,setIsEditing] = useState(false);
@@ -37,8 +40,15 @@ function App() {
   const [selectedNote,setNote] = useState(defNote);
 
   const [notesList,setNotesList] = useState([]);
-    
 
+  const [isSignedin,setIsSignedIn] = useState(false);
+
+  const SignIn = () => {
+
+  //  console.log("sign in requred");
+
+    
+  }
 
   const PushToDatabase = async (eNote) => {
     console.log(`Start PUSH ${eNote.note_id} - ${eNote.title}`);
@@ -125,7 +135,7 @@ function App() {
 
      
   
-      fetchNotes();
+    SignIn();
     
   } , []);
 
@@ -223,6 +233,8 @@ function App() {
    // console.log("DISCARD EDIT");
   }
 
+ 
+
 
   return (
     <>
@@ -235,9 +247,10 @@ function App() {
     <>
     <Header/>
 
-
+   <SignInWindow></SignInWindow>
    <SearchBar SearchFunction = {searchNotes} createNew = {createButton}/>
-    {<NoteList  notesArray = {notesList }isNoteClicked = {onNoteSelect} />}
+
+    {isSignedin && <NoteList  notesArray = {notesList }isNoteClicked = {onNoteSelect} />}
     </>
     {
        isEditing && <Editor save = {onSave} discard = {onDiscard} note = {selectedNote}

@@ -2,7 +2,7 @@ import headerStyles from "./header.module.css"
 
 function Header(){
 
-
+    console.log("Header REACHED");
 
     return(
 
@@ -17,7 +17,6 @@ function Header(){
         <li>HOME</li>
         <li>GROUPS</li>
         <li>LOCKED</li>
-
 
         </ul>
 </div>

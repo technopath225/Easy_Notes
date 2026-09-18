@@ -7,7 +7,8 @@ import createRoute from "./routerCreate.js";
 import deleteRoute from "./routerDelete.js";
 import routerEditNote from "./routerEditNote.js";
 import searchRoute from "./routerSearch.js";
-
+import authRoute from "./routerAuth.js";
+import createUserRoute from "./routerCreateUser.js";
 const app = express();
 app.use(express.json());
 app.use(cors({
@@ -18,8 +19,12 @@ const PORT =  5005;
 
 //app.use(cors);
 app.get("",(req,res) => {
-    res.redirect("/home");
+    res.redirect("/signin");
 })
+app.use("/signin",authRoute);
+
+app.use("/register",createUserRoute);
+
 app.use("/home",homeRouter);
   
 app.use("/all",getAllRoute);

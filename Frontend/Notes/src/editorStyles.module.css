@@ -32,7 +32,7 @@ resize: none;
     list-style-type: none;
     display: flex;
     justify-content: end;
-    gap: var(-EditorTopGap);
+    gap: var(--EditorTopGap);
    
 }
 
