@@ -1,5 +1,6 @@
 import express from "express"
 import pool from "./db.js";
+import {HashPassword} from "./utils/hashHelper.js" 
 const router = express.Router();
 
 router.post("", async (req,res) => {
@@ -16,7 +17,28 @@ try {
    
     
     if(allNotes.rows.length === 0){
-        return res.status(500).json({message:"user created"});
+
+
+       
+         try {
+
+            const hpass = await HashPassword(pass);
+           
+          
+            const newAccount = await pool.query("insert into users  (name,email,password)  values(($1),($2),($3))",[name,email,hpass]);
+     
+            if(newAccount.rows.length === 0){
+
+                return res.status(200).json({message:"Account Created sccessfully"});
+            }
+
+       } catch (error) {
+        
+        return res.status(400).json(error);
+
+       }
+       
+       
     }
 
     return res.status(400).json({message:"Account with this email already exist"});
