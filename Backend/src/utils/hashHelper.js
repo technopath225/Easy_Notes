@@ -20,9 +20,9 @@ export const CompareHash = async (nakedPass,hashedPass) =>{
     try {
         
        
-        console.log(`nkP ${nakedPass} === ${hashedPass}`);
+      ///=  console.log(`nkP ${nakedPass} === ${hashedPass}`);
         const valid = await bcrypt.compare(nakedPass,hashedPass);
-        console.log(valid);
+       // console.log(valid);
         return valid;
     } catch (error) {
         console.log("Error Comparing Hashed password");

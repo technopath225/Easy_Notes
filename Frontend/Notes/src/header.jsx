@@ -1,6 +1,6 @@
 import headerStyles from "./header.module.css"
 
-function Header(){
+function Header({SignOutFunc}){
 
     console.log("Header REACHED");
 
@@ -17,6 +17,7 @@ function Header(){
         <li>HOME</li>
         <li>GROUPS</li>
         <li>LOCKED</li>
+        <li onClick={() => {SignOutFunc()}}>Sign Out</li>
 
         </ul>
 </div>

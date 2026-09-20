@@ -43,12 +43,95 @@ function App() {
 
   const [isSignedin,setIsSignedIn] = useState(false);
 
-  const SignIn = () => {
+  const RememberUser = async() => {
+    try {
+      const responce = await fetch(`${BASEURL}/all`,{
+        method: "GET",
+        credentials: "include"});
+ const data = await responce.json();
+ if(responce.status === 200){
+  setIsSignedIn(true);
+  setNotesList(data);
+}
+  
+    
+  } catch (error) {
+      console.error( "Error fetching data :: ",error.message);
+  }
+
+  }
+  const SignIn = async (inpEmail,inpPass) => {
 
   //  console.log("sign in requred");
 
-    
+  try {
+    const res = await fetch(`${BASEURL}/signin`, {
+      method:'POST',
+      credentials: "include",
+      body:JSON.stringify({email:inpEmail,pass:inpPass}),
+      headers:{
+        'content-type':'application/json'
+      }})
+
+      const resData = await res.json();
+      console.log(res);
+      
+      if(res.status === 200){
+        setIsSignedIn(true);
+      }
+      fetchNotes();
+    } catch (error) {
+        console.error( "SOMETHING WENT WRONG WITH SINGING IN :: ",error.message);
+    }
+   
   }
+
+  const SignOut = async () => {
+
+    //  console.log("sign in requred");
+  
+    try {
+      const res = await fetch(`${BASEURL}/signout`, {
+        method:'POST',
+        credentials: "include",
+        body:JSON.stringify(),
+        headers:{
+          'content-type':'application/json'
+        }})
+  
+        const resData = await res.json();
+        console.log(res);
+        setNotesList([]);
+        if(res.status === 200){
+          setIsSignedIn(false);
+        }
+    
+      } catch (error) {
+          console.error( "SOMETHING WENT WRONG WITH SINGING IN :: ",error.message);
+      }
+     
+    }
+
+  const Register = async (InpName,inpEmail,inpPass) => {
+
+    //  console.log("sign in requred");
+  
+    try {
+      const res = await fetch(`${BASEURL}/register`, {
+        method:'POST',
+        body:JSON.stringify({name:InpName,email:inpEmail,pass:inpPass}),
+        headers:{
+          'content-type':'application/json'
+        }})
+  
+        const resData = await res.json();
+        
+       // fetchNotes();
+      } catch (error) {
+          console.error( "SOMETHING WENT WRONG WITH REGISTERING:: ",error.message);
+      }
+     
+    }
 
   const PushToDatabase = async (eNote) => {
     console.log(`Start PUSH ${eNote.note_id} - ${eNote.title}`);
@@ -56,6 +139,7 @@ function App() {
     try {
       const res = await fetch(`${BASEURL}/edit`, {
         method:'POST',
+        credentials: "include",
         body:JSON.stringify(eNote),
         headers:{
           'content-type':'application/json'
@@ -106,6 +190,7 @@ function App() {
       try {
         const res = await fetch(`${BASEURL}/search`, {
           method:'POST',
+          credentials: "include",
           body:JSON.stringify(search),
           headers:{
             'content-type':'application/json'
@@ -120,7 +205,9 @@ function App() {
     }
     const fetchNotes = async () => {
       try {
-          const responce = await fetch(`${BASEURL}/all`);
+          const responce = await fetch(`${BASEURL}/all`,{
+            method: "GET",
+            credentials: "include"});
      const data = await responce.json();
       setNotesList(data);
         
@@ -135,7 +222,8 @@ function App() {
 
      
   
-    SignIn();
+    
+    RememberUser();
     
   } , []);
 
@@ -146,6 +234,7 @@ function App() {
     try {
       const res = await fetch(`${BASEURL}/create`, {
         method:'POST',
+        credentials: "include",
         body:JSON.stringify(newNote),
         headers:{
           'content-type':'application/json'
@@ -169,6 +258,7 @@ function App() {
       try {
         const res = await fetch(`${BASEURL}/delete`, {
           method:'DELETE',
+          credentials: "include",
           body:JSON.stringify(noteID),
           headers:{
             'content-type':'application/json'
@@ -245,9 +335,9 @@ function App() {
 
  
     <>
-    <Header/>
+    <Header SignOutFunc = {SignOut}/>
 
-   {!isSignedin && <AuthWindow/>}
+   {!isSignedin && <AuthWindow signInFunc={SignIn} RegisterFunc={Register}/>}
    <SearchBar SearchFunction = {searchNotes} createNew = {createButton}/>
 
     {isSignedin && <NoteList  notesArray = {notesList }isNoteClicked = {onNoteSelect} />}
